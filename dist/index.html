@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="manifest" href="/assets/manifest-BJwbLR4P.json" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="Premium QR Scanner and Generator" />
+    <meta name="theme-color" content="#0f0c29" />
+    <title>QR Master</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/index-C0MCKDZs.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CneN1E8f.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1>QR Master</h1>
+        </header>
+
+        <main>
+            <div id="scan-view" class="view active">
+                <div class="scanner-container">
+                    <div id="reader"></div>
+                    <div class="scanner-overlay">
+                        <div class="scan-frame"></div>
+                        <p class="scan-instructions">Align QR code within the frame</p>
+                    </div>
+                </div>
+                <div id="scan-result" class="result-card hidden">
+                    <h3>Scan Result</h3>
+                    <p id="result-text"></p>
+                    <div class="actions">
+                        <button id="copy-btn" class="btn secondary">Copy</button>
+                        <button id="open-btn" class="btn primary">Open</button>
+                    </div>
+                    <button id="scan-again-btn" class="btn text">Scan Again</button>
+                </div>
+            </div>
+
+            <div id="generate-view" class="view">
+                <div class="generator-container">
+                    <div class="input-group">
+                        <textarea id="qr-input" placeholder="Enter text or URL to generate QR code..."></textarea>
+                    </div>
+                    <button id="generate-btn" class="btn primary large">Generate QR Code</button>
+
+                    <div id="qr-output" class="hidden">
+                        <div class="canvas-wrapper">
+                            <canvas id="qr-canvas"></canvas>
+                        </div>
+                        <button id="download-btn" class="btn secondary">Download Image</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <nav class="bottom-nav">
+            <button class="nav-item active" data-target="scan-view">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 7V5a2 2 0 0 1 2-2h2"></path>
+                    <path d="M17 3h2a2 2 0 0 1 2 2v2"></path>
+                    <path d="M21 17v2a2 2 0 0 1-2 2h-2"></path>
+                    <path d="M7 21H5a2 2 0 0 1-2-2v-2"></path>
+                </svg>
+                <span>Scan</span>
+            </button>
+            <button class="nav-item" data-target="generate-view">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <path d="M3 14h7v7H3z"></path>
+                </svg>
+                <span>Generate</span>
+            </button>
+        </nav>
+    </div>
+</body>
+
+</html>
