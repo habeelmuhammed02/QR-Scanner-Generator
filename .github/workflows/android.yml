@@ -34,8 +34,7 @@ jobs:
       - name: Build Android APK
         run: |
           cd android
-          sudo apt-get install -y dos2unix
-          dos2unix gradlew
+          sed -i 's/\r$//' gradlew
           chmod +x gradlew
           ./gradlew assembleDebug
 
